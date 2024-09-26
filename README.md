@@ -92,7 +92,7 @@ The script expects a JSON file exam3.json(2nd case) containing points with the f
     }
 }
 
-The secret constant 'c' is: 28735619723864
+## The secret constant 'c' is: 28735619723864
 
 ![image](https://github.com/user-attachments/assets/be503125-e750-4b8e-90c0-e3221775a13b)
 
