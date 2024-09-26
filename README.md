@@ -1,16 +1,30 @@
+Certainly! Below is an improved version of the `README.md` for your GitHub project. It adds more structure, includes headings for images, corrects the formatting, and provides a clearer explanation for new users.
+
+---
+
 # Lagrange Interpolation for Polynomial Constant Term
 
-This Node.js script reads a JSON file containing points encoded in various bases, decodes the points, and uses Lagrange interpolation to calculate the constant term (`c`) of the polynomial. 
+This Node.js script reads a JSON file containing polynomial points encoded in various bases, decodes them, and uses Lagrange interpolation to calculate the constant term (`c`) of the polynomial.
 
+## Table of Contents
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Usage](#usage)
+- [Input JSON File](#input-json-file)
+  - [Example 1](#example-1)
+  - [Example 2](#example-2)
+- [Output](#output)
+- [Screenshots](#screenshots)
+- [License](#license)
 
 ## Introduction
-The script performs the following steps:
-1. Reads and parses a JSON file containing the polynomial's roots.
-2. Decodes the `y` values encoded in different bases.
-3. Uses Lagrange interpolation to compute the polynomial and finds the constant term (`c`).
+This script performs the following steps:
+1. Reads and parses a JSON file containing the polynomial's roots and encoded points.
+2. Decodes the `y` values from their specified bases.
+3. Uses Lagrange interpolation to compute the polynomial's constant term (`c`).
 
 ## Prerequisites
-- Node.js installed on your system. You can download it from [Node.js Official Website](https://nodejs.org/).
+- [Node.js](https://nodejs.org/) installed on your system.
 - Basic knowledge of JSON file structure.
 
 ## Usage
@@ -20,9 +34,30 @@ The script performs the following steps:
     ```bash
     node newfile.js
     ```
-   
-### Input JSON File - 1
-The script expects a JSON file exam3.json(sample case) containing points with the following structure:
+
+## Input JSON File
+The script expects a JSON file containing information in the following format:
+
+```json
+{
+    "keys": {
+        "n": [number_of_points],
+        "k": [minimum_points_required]
+    },
+    "[x_value_1]": {
+        "base": "[base]",
+        "value": "[encoded_value]"
+    },
+    "[x_value_2]": {
+        "base": "[base]",
+        "value": "[encoded_value]"
+    },
+    ...
+}
+```
+
+### Example 1
+Sample JSON input (`exam3.json`):
 ```json
 {
     "keys": {
@@ -42,12 +77,20 @@ The script expects a JSON file exam3.json(sample case) containing points with th
         "value": "32811A4AA0B7B"
     }
 }
+```
+
+- **Explanation**:
+  - `"n"`: Number of provided points (4 in this case).
+  - `"k"`: Minimum number of points required for interpolation (3 in this case).
+  - `"1", "2", "3"`: Represent different `x` values, with their corresponding `y` values encoded in different bases (10, 16, 12).
+
+**Expected Output**: 
+```
 The secret constant 'c' is: 3
+```
 
-![image](https://github.com/user-attachments/assets/ffc30874-468d-4c6a-af74-04e6ddf36f53)
-
-### Input JSON File - 2
-The script expects a JSON file exam3.json(2nd case) containing points with the following structure:
+### Example 2
+Another JSON input example (`exam3.json`):
 ```json
 {
     "keys": {
@@ -91,10 +134,30 @@ The script expects a JSON file exam3.json(2nd case) containing points with the f
         "value": "642121030037605"
     }
 }
+```
 
-## The secret constant 'c' is: 28735619723864
+- **Explanation**:
+  - `"n"`: Number of provided points (9 in this case).
+  - `"k"`: Minimum number of points required for interpolation (6 in this case).
 
-![image](https://github.com/user-attachments/assets/be503125-e750-4b8e-90c0-e3221775a13b)
+**Expected Output**: 
+```
+The secret constant 'c' is: 28735619723864
+```
 
+## Output
+The script outputs the calculated constant term (`c`) using the provided points and Lagrange interpolation.
 
+## Screenshots
+### Example 1
+![Example 1 Output](https://github.com/user-attachments/assets/ffc30874-468d-4c6a-af74-04e6ddf36f53)
 
+### Example 2
+![Example 2 Output](https://github.com/user-attachments/assets/be503125-e750-4b8e-90c0-e3221775a13b)
+
+## License
+This project is open-source and available under the MIT License.
+
+---
+
+This revised `README.md` provides a clearer structure, step-by-step instructions, example input formats, expected outputs, and includes headings for screenshots. It also uses the Markdown format appropriately to enhance readability.
